@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Local development ###
+**/application-develop.properties
+**/application-develop.yaml
+**/application-develop.yal
