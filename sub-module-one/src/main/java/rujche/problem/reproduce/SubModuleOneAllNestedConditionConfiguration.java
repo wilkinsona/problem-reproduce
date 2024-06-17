@@ -1,13 +1,18 @@
 package rujche.problem.reproduce;
 
 import com.azure.spring.data.cosmos.config.AbstractCosmosConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.context.annotation.Conditional;
 
-@ConditionalOnClass(SubModuleOneAllNestedCondition.class)
-public class SubModuleOneAllNestedConditionConfiguration extends AbstractCosmosConfiguration {
+@Conditional(SubModuleOneAllNestedCondition.class)
+public class SubModuleOneAllNestedConditionConfiguration {
 
-    @Override
-    protected String getDatabaseName() {
-        return "";
+    static class CosmosConfiguration extends AbstractCosmosConfiguration {
+
+        @Override
+        protected String getDatabaseName() {
+            return "";
+        }
+
     }
+
 }
